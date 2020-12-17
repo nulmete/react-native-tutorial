@@ -7,7 +7,7 @@ export const GlobalStyles = StyleSheet.create({
   },
   titleText: {
     fontFamily: "Raleway_400Regular",
-    fontSize: 42,
+    fontSize: 22,
     color: "#333",
   },
   paragraph: {
