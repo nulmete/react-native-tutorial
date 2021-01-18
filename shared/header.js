@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Dimensions, Image } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Header({ navigation, title }) {
@@ -15,7 +15,11 @@ export default function Header({ navigation, title }) {
         onPress={openMenu}
         style={styles.icon}
       />
-      <View>
+      <View style={styles.headerTitle}>
+        <Image
+          source={require("../assets/heart_logo.png")}
+          style={styles.headerImage}
+        />
         <Text style={styles.headerText}>GameZone - {title}</Text>
       </View>
     </View>
@@ -24,7 +28,7 @@ export default function Header({ navigation, title }) {
 
 const styles = StyleSheet.create({
   header: {
-    width: "100%",
+    width: Dimensions.get("screen").width,
     height: "100%",
     flexDirection: "row",
     alignItems: "center",
@@ -34,6 +38,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
     color: "#333",
+  },
+  headerTitle: {
+    flexDirection: "row",
+  },
+  headerImage: {
+    width: 26,
+    height: 26,
+    marginHorizontal: 10,
   },
   icon: {
     position: "absolute",
